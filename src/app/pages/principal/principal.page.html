@@ -1,0 +1,67 @@
+<ion-header>
+  <ion-toolbar color="sesion">
+    <ion-title>Bienvenido Nombre</ion-title>
+    <ion-buttons [collapse]="true" slot="end">
+      <ion-button routerLink="/inicio"><ion-icon name="log-out-outline"></ion-icon></ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-item>
+      <ion-avatar slot="start">
+        <img src="../../../assets/img/jugador/user.png">
+      </ion-avatar>
+      <ion-label>
+        <h3>Nombre </h3>
+        <p>Nacimiento fecha</p>
+      </ion-label>
+    </ion-item>
+    <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/card-media.png" />
+    <ion-card-header>
+      <ion-card-title>Club</ion-card-title>
+      <ion-card-subtitle>Posición</ion-card-subtitle>
+    </ion-card-header>
+  
+    <ion-card-content>
+      Notas o algo adicional para mostrar porque el espacio está muy grande y se tiene que llenar para no dar aspecto vacío
+    </ion-card-content>
+    <ion-footer>
+      <ion-row>
+        <ion-col center text-center>
+            <div>Estatura</div>
+        </ion-col>
+        <ion-col center text-center>
+            <div>Peso</div>
+        </ion-col>
+        <ion-col center text-center>
+            <div>Edad</div>
+        </ion-col>
+      </ion-row>
+    </ion-footer>
+  </ion-card>
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <button routerLink='/calendario'>
+            <ion-icon size="large" name="calendar-number-outline"></ion-icon>
+          </button>
+        </ion-col>
+        <ion-col>
+          <button routerLink='/jugador'>
+            <ion-icon size="large" name="person-outline"></ion-icon>
+          </button>
+        </ion-col>
+        <ion-col>
+          <button routerLink='/avisos'>
+            <ion-icon size="large" name="trending-up-outline"></ion-icon>
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-footer>
