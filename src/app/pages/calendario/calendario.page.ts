@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { JugadorService } from '../../services/jugador.service';
+
 
 @Component({
   selector: 'app-calendario',
@@ -6,10 +8,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./calendario.page.scss'],
 })
 export class CalendarioPage implements OnInit {
-
-  constructor() { }
+data:any;
+  constructor(private jugadorService: JugadorService) { }
 
   ngOnInit() {
+    this.jugadorService.getPartidos().subscribe(
+      data => {
+        this.data=data;
+        // Aquí puedes hacer lo que necesites con los datos obtenidos
+        console.log(data);
+      },
+      error => {
+        console.log(error);
+      }
+    );
   }
-
 }

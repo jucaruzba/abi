@@ -1,35 +1,46 @@
 <ion-header>
-  <ion-toolbar color="azul">
-    <ion-buttons slot="start">
-      <ion-back-button></ion-back-button>
+  <ion-toolbar color="sesion">
+    <img src="../../../assets/logo/abi_sin.png" alt="" width="50px">
+    <ion-buttons [collapse]="true" slot="end">
+      <ion-button routerLink="/inicio"><ion-icon name="log-out-outline"></ion-icon></ion-button>
     </ion-buttons>
-    <ion-title>Calendario de Juegos</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <!-- Se genega cada card para los próximos partidos-->
-  <ion-card>
-    <ion-card-header>
-      <ion-card-title>Categoría</ion-card-title>
-      <ion-item>
-        <ion-avatar slot="end">
-          <img src="../../../assets/img/jugador/user.png">
-        </ion-avatar>
-          <ion-card-subtitle>Equipo 1</ion-card-subtitle>
-      </ion-item>
-      <br><ion-label>VS.</ion-label><br>
-      <ion-item>
-        <ion-avatar slot="end">
-          <img src="../../../assets/img/jugador/user.png">
-        </ion-avatar>
-          <ion-card-subtitle>Equipo 2</ion-card-subtitle>
-      </ion-item>
+  <ion-card ion-item *ngFor="let partido of data">
+    <ion-card-header class="header-card">
+      <ion-card-title class="titulo">{{ partido.categoria }}</ion-card-title>
     </ion-card-header>
-  
+      <br>
+      <ion-card-subtitle class="equipo1">{{ partido.local }}</ion-card-subtitle>
+      <br><ion-label>VS</ion-label>
+      <br>
+      <br>
+      <ion-card-subtitle class="equipo2">{{ partido.visitante }}</ion-card-subtitle>
+      <br>
+
     <ion-card-content>
-     <ion-label>Lugar:</ion-label><br>
-     <ion-label>Fecha:</ion-label>
+      <ion-label class="lugar">Lugar: {{ partido.lugar }}</ion-label><br>
+      <ion-label class="fecha">Fecha: {{ partido.fecha }}</ion-label>
     </ion-card-content>
   </ion-card>
+
 </ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-button size="large" color="dark" fill="clear" onclick="window.history.back()"><ion-icon
+              name="home-outline"></ion-icon></ion-button>
+          <ion-button size="large" href="/calendario" color="dark" fill="clear"><ion-icon
+              name="calendar-number-outline"></ion-icon></ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+
+</ion-footer>

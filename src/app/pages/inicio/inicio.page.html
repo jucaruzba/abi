@@ -1,25 +1,8 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-back-button></ion-back-button>
-    </ion-buttons>
-    <ion-title> Asociación de Basketbol</ion-title>
-  </ion-toolbar>
-</ion-header>
-<ion-content>
-  <form>
-    <ion-item lines="full">
-      <ion-label position="floating">Usuario</ion-label>
-      <ion-input type="text" required></ion-input>
-    </ion-item>
-    <ion-item lines="full">
-      <ion-label position="floating">Contraseña</ion-label>
-      <ion-input type="password" required></ion-input>
-    </ion-item>
-    <ion-row>
-      <ion-col>
-        <ion-button type="submit" color="danger" expand="block" routerLink="/principal">Iniciar Sesión</ion-button>
-      </ion-col>
-    </ion-row>
-  </form>
+<ion-content [fullscreen]="true">
+
+  <div id="container">
+    <img class="logo" src="../../assets/logo/abisin.png" alt="" width="250px">
+    <ion-input id="input-curp" maxlength="18" placeholder="CURP"></ion-input>
+    <ion-button (click)="onConsultar()" >CONSULTAR</ion-button>
+  </div>
 </ion-content>
