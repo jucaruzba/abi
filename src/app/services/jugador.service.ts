@@ -23,4 +23,11 @@ export class JugadorService {
       map(response => response.data)
     );
   }
+
+  getJugadores(): Observable<any[]> {
+    const url = `${this.apiUrl}/getjugadorcurp`;
+    return this.http.get<any>(url).pipe(
+      map(response => response.data)
+    );
+  }
 }
