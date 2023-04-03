@@ -22,7 +22,7 @@
       <br>
 
     <ion-card-content>
-      <ion-label class="lugar">Lugar: {{ partido.lugar }}</ion-label><br>
+      <ion-label class="lugar">Lugar: <a href="https://www.google.com/maps/search/?api=1&query={{partido.lugar}}" target="_blank">{{partido.lugar}}</a></ion-label><br>
       <ion-label class="fecha">Fecha: {{ partido.fecha }}</ion-label>
     </ion-card-content>
   </ion-card>
@@ -36,7 +36,7 @@
         <ion-col>
           <ion-button size="large" color="dark" fill="clear" onclick="window.history.back()"><ion-icon
               name="home-outline"></ion-icon></ion-button>
-          <ion-button size="large" href="/calendario" color="dark" fill="clear"><ion-icon
+          <ion-button size="large" fill="clear" color="dark" fill="clear"><ion-icon
               name="calendar-number-outline"></ion-icon></ion-button>
         </ion-col>
       </ion-row>

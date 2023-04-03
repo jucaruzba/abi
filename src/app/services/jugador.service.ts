@@ -7,11 +7,13 @@ import { map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class JugadorService {
-  private apiUrl = 'http://132.247.184.65';
+
+  private apiUrl = 'http://132.247.184.65'; // URL base
 
   constructor(private http: HttpClient) { }
 
   // Método para obtener un jugador por su CURP
+  
   getJugador(curp: string): Observable<any> {
     const url = `${this.apiUrl}/getjugador/${curp}`;
     return this.http.get(url);
@@ -30,4 +32,5 @@ export class JugadorService {
       map(response => response.data)
     );
   }
+
 }

@@ -51,8 +51,10 @@
     <ion-grid >
       <ion-row >
         <ion-col>
-          <ion-button size="large" href="/principal" color="dark" fill="clear"><ion-icon name="home-outline"></ion-icon></ion-button>
-          <ion-button size="large" href="/calendario" color="dark" fill="clear"><ion-icon name="calendar-number-outline"></ion-icon></ion-button>
+          <ion-button size="large" color="dark" fill="clear"><ion-icon name="home-outline"></ion-icon></ion-button>
+          <ion-button size="large" [routerLink]="['/calendario']" [queryParams]="{ club:jugador.club, categoria: jugador.categoria }" color="dark" fill="clear">
+            <ion-icon name="calendar-number-outline"></ion-icon>
+          </ion-button>
         </ion-col>
       </ion-row>
     </ion-grid>

@@ -1,7 +1,16 @@
 {
   "name": "abi",
   "integrations": {
-    "capacitor": {}
+    "capacitor": {
+      "enabled": false
+    },
+    "cordova": {}
   },
-  "type": "angular"
+  "type": "angular",
+  "proxies": [
+    {
+      "path": "/api",
+      "proxyUrl": "https://cors-anywhere.herokuapp.com/http://132.247.184.65"
+    }
+  ]
 }

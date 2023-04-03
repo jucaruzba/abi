@@ -8,19 +8,14 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class PrincipalPage implements OnInit {
   jugador: any;
-  
-  opcionesSlide={
-    loop:true,
- 
-  }
-  constructor(private activatedRoute: ActivatedRoute) { }
+
+  constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
-    const state = history.state;
-    if (state && state.jugador) {
-      this.jugador = state.jugador;
-      console.log(this.jugador);
-    }
+    this.route.queryParams.subscribe(params => {
+      if (params && params['jugador']) {
+        this.jugador = JSON.parse(params['jugador']);
+      }
+    });
   }
-  
 }
